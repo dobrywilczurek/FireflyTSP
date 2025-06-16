@@ -50,7 +50,7 @@ def move_firefly(firefly, target):
         if firefly[i] != target[i] and random.random() < 0.3:
             j = new_tour.index(target[i])
             new_tour[i], new_tour[j] = new_tour[j], new_tour[i]
-    return new_tour  # <-- przenieś return na koniec
+    return new_tour
 
 
 # Algorytm świetlika
@@ -102,7 +102,7 @@ def draw_tour(tour, points):
     plt.figure(figsize=(10, 10))
     plt.plot(x, y, marker='o', color='red')
     for i, point in enumerate(tour):
-        plt.text(points[point][0], points[point][1], str(point), fontsize=12)
+        plt.text(points[point][0], points[point][1], str(point), fontsize=8)
 
     plt.title("Najlepsza znaleziona trasa przez algorytm świetlików")
     plt.grid(True)
@@ -110,7 +110,7 @@ def draw_tour(tour, points):
 
 
 # generuje x losowych punktów na osi 2D
-points = [(random.randint(0, 100), random.randint(0, 100)) for _ in range(30)]
+points = [(0, 0), (9, 7), (11, 5), (16, 11), (1, 12), (4, 8), (6, 2), (2, 7)]
 
 # Uruchomienie algorytmu
 best_tour, best_distance = firefly_algorithm(points)
