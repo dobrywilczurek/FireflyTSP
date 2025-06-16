@@ -110,7 +110,7 @@ def draw_tour(tour, points):
 
 
 # generuje x losowych punktów na osi 2D
-points = [(0, 0), (9, 7), (11, 5), (16, 11), (1, 12), (4, 8), (6, 2), (2, 7)]
+points = [(random.randint(0,100), random.randint(0,100)) for _ in range(30)]
 
 # Uruchomienie algorytmu
 best_tour, best_distance = firefly_algorithm(points)
